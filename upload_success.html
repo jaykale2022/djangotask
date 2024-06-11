@@ -1,0 +1,30 @@
+<!-- myapp/templates/upload_success.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Success</title>
+</head>
+<body>
+<h1>File uploaded successfully!</h1>
+{% if error_message %}
+  <h2>Error:</h2>
+  <p>{{ error_message }}</p>
+{% endif %}
+{% if data_preview %}
+  <h2>Data Preview:</h2>
+  {{ data_preview|safe }}
+{% endif %}
+{% if plot_url %}
+  <h2>Plot:</h2>
+  <img src="{{ plot_url }}" alt="Plot Image"/>
+{% endif %}
+{% if mean_value is not None and median_value is not None %}
+        <h2>Statistics:</h2>
+        <p>Mean: {{ mean_value }}</p>
+        <p>Median: {{ median_value }}</p>
+    {% endif %}
+</body>
+</html>
+
