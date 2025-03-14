@@ -5,7 +5,7 @@ from myApp.forms import UploadFileForm
 import matplotlib.pyplot as plt
 import io
 import base64
-
+import wrangler@4.0.0
 def home(request):
     return render(request, 'home.html')
 
